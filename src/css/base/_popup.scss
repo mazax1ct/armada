@@ -1,0 +1,65 @@
+.popup {
+    border-radius: 24px;
+    background-color: #fff;
+    display: none;
+    position: relative;
+    width: 100%;
+
+    &.fancybox-content {
+        overflow: visible;
+        padding: 24px;
+        @media(min-width: $sm) {
+            padding: 60px;
+        }
+
+        &.popup--w_700 {
+            max-width: 700px;
+        }
+
+        &.popup--w_800 {
+            max-width: 800px;
+        }
+
+        &.popup--w_900 {
+            max-width: 900px;
+        }
+    }
+
+    &__closer {}
+}
+
+.fancybox-slide--html {
+    .fancybox-close-small {
+        &.popup__closer {
+            @include button-reset;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+            left: auto;
+            opacity: 1;
+            position: absolute;
+            right: 0;
+            top: -40px;
+            transition: color 0.3s;
+            width: 40px;
+            z-index: 1;
+            @media(min-width: $sm) {
+                color: var(--text_color);
+                right: 16px;
+                top: 16px;
+            }
+            @include hover {
+                color: var(--primary_color);
+            }
+
+            svg {
+                fill: currentColor;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}

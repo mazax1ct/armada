@@ -1,0 +1,25 @@
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$hd: 1200px;
+$lg: 1400px;
+$xlg: 1600px;
+
+:root {
+    --bg_color_1: #090909;
+    --bg_color_2: #202427;
+    --main_font: '2MASS J1808', Arial, sans-serif;
+    --text_color: #130100;
+    --link_color: #0054FF;
+    --primary_color: #C18C45;
+    --grey_color: #F6F5F3;
+    --grey_color_2: #E6E6E6;
+    --grey_color_3: #6C6C6C;
+    --error_color: #F5495E;
+    --success_color: #3FA562;
+    --container_padding: 20px;
+    @media(min-width: $hd) {
+        --container_padding: 50px;
+    }
+    --container_max_width: 1600px;
+}

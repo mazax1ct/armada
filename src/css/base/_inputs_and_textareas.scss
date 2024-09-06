@@ -1,0 +1,39 @@
+.input {
+    border: 1px solid var(--grey_color_2);
+    background-color: #fff;
+    border-radius: 100px;
+    height: 50px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+        color: var(--grey_color_3);
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        color: var(--grey_color_3);
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: var(--grey_color_3);
+        opacity: 1;
+    }
+
+    &.error {
+        border-color: var(--primary_color);
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    &:focus {
+        outline: 0;
+    }
+}

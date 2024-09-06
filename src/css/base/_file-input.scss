@@ -1,0 +1,38 @@
+.file-input {
+    align-items: center;
+    border-radius: 100px;
+    background-color: var(--grey_color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    height: 50px;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    z-index: 0;
+
+    input {
+        position: absolute;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        width: 1px;
+    }
+
+    span {
+        color: #262626;
+        display: block;
+        flex-grow: 1;
+        max-width: calc(100% - 24px - 18px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    svg {
+        fill: #9D9D9D;
+        height: 18px;
+        width: 18px;
+    }
+}

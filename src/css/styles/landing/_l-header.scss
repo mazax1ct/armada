@@ -1,0 +1,64 @@
+.l-header {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    position: relative;
+    z-index: 0;
+
+    picture {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+
+        img {
+            display: block;
+            height: 100%;
+            //max-height: 900px;
+            object-fit: cover;
+            object-position: center bottom;
+            width: 100%;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font-size: clamp(26px, 6.25vw, 120px);
+            line-height: 1.2;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: clamp(12px, 2.5vw, 32px);
+            font-weight: 900;
+            margin-bottom: 130px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 75px;
+        width: 65px;
+        @media(max-width: $md - 0.02px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media(min-width: $lg) {
+            width: 115px;
+        }
+    }
+
+    &__button-block {
+        text-align: center;
+        @media(min-width: $md) {
+            padding-right: 150px;
+            text-align: right;
+        }
+    }
+}

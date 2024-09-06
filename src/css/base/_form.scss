@@ -1,0 +1,108 @@
+.form {
+    &__row {
+        margin-bottom: 8px;
+
+        &--type_1 {
+            @media(min-width: $sm) {
+                --gap: 8px;
+                display: flex;
+                gap: var(--gap);
+            }
+
+            .form__label {
+                @media(min-width: $sm) {
+                    width: calc(100% / 2 - var(--gap) / 2);
+                }
+
+                &:not(:last-child) {
+                    @media(max-width: $sm - 0.02px) {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        &--type_2 {
+            @media(min-width: $md) {
+                --gap: 8px;
+                display: flex;
+                gap: var(--gap);
+            }
+
+            .form__label {
+                @media(min-width: $md) {
+                    width: calc(100% / 2 - var(--gap) / 2);
+                }
+
+                &:not(:last-child) {
+                    @media(max-width: $md - 0.02px) {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__bottom {
+        &--type_1 {
+            margin-top: 24px;
+            text-align: center;
+            @media(min-width: $sm) {
+                margin-top: 40px;
+            }
+
+            .button {
+                width: 100%;
+                @media(min-width: $sm) {
+                    min-width: 180px;
+                    width: 180px;
+                }
+            }
+
+            p {
+                margin-top: 24px;
+            }
+        }
+
+        &--type_2 {
+            margin-top: 24px;
+            @media(min-width: $md) {
+                display: flex;
+                gap: 24px;
+                margin-top: 40px;
+            }
+
+            .button {
+                width: 100%;
+                @media(min-width: $md) {
+                    min-width: 180px;
+                    width: 180px;
+                }
+            }
+
+            p {
+                @media(max-width: $md - 0.02px) {
+                    margin-top: 16px;
+                    text-align: center;
+                }
+            }
+        }
+
+        p {
+            color: var(--grey_color_3);
+            font-size: 14px;
+
+            a {
+                color: var(--grey_color_3);
+                text-decoration: underline;
+                @include hover {
+                    color: var(--primary_color);
+                }
+            }
+        }
+    }
+}

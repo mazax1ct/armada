@@ -1,0 +1,21 @@
+.swiper-button-next,
+.swiper-button-prev {
+    @include active-area;
+    @include button-reset;
+    color: var(--black_dark);
+    height: 24px;
+    margin: 0;
+    position: relative;
+    transition: color 0.3s;
+    width: 24px;
+    z-index: 1;
+    @include hover {
+        color: var(--ocher);
+    }
+
+    svg {
+        fill: currentColor;
+        height: 24px;
+        width: 24px;
+    }
+}

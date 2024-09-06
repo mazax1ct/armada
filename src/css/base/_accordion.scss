@@ -1,0 +1,72 @@
+.accordion {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+
+    &__title-block {
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        @include hover {
+            color: var(--primary_color);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s;
+        }
+    }
+
+    &__toggler {
+        @include button-reset;
+        align-items: center;
+        background-color: var(--grey_color);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        min-width: 40px;
+        transition: color 0.3s;
+        width: 40px;
+
+        &::after {
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+        @include hover {
+            color: var(--primary_color);
+        }
+
+        &.is-active {
+            color: var(--primary_color);
+
+            svg {
+                transform: rotate(45deg);
+            }
+        }
+
+        svg {
+            fill: currentColor;
+            height: 16px;
+            min-width: 16px;
+            transition: transform 0.3s;
+            width: 16px;
+        }
+    }
+
+    &__body {
+        display: none;
+        overflow: hidden;
+        padding-top: 16px;
+    }
+}

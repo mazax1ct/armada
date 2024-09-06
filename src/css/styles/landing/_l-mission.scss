@@ -1,0 +1,174 @@
+.l-mission {
+    --gap: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    @media(min-width: $sm) {
+        --gap: 12px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    @media(max-width: $sm - 0.02px) {
+        padding-top: 15%;
+    }
+
+    &__item {
+        position: relative;
+        z-index: 0;
+        @media(max-width: $sm - 0.02px) {
+            aspect-ratio: 1/0.9375;
+            max-width: 320px;
+        }
+
+        picture {
+            display: block;
+
+            img {
+                display: block;
+            }
+        }
+
+        &:nth-child(1) {
+            .l-mission__item-inner {
+                & > img {
+                    margin-top: -15%;
+                    max-width: 335px;
+                    margin-left: 5%;
+                    width: 65.3125%;
+                    @media(min-width: $sm) {
+                        margin-top: -8%;
+                        width: 50%;
+                    }
+                }
+
+                p {
+                    @media(min-width: $sm) {
+                        margin-top: 1.5em;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            @media(min-width: $sm) {
+                margin-top: 10%;
+            }
+
+            .l-mission__item-inner {
+                img {
+                    margin-top: -5%;
+                    margin-left: 5%;
+                    max-width: 304px;
+                    width: 56.25%;
+                    @media(min-width: $sm) {
+                        margin-top: 0;
+                        width: 45%;
+                    }
+                }
+
+                p {
+                    @media(min-width: $sm) {
+                        margin-top: 1.5em;
+                        padding-right: clamp(40px, 6vw, 100px);
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            @media(min-width: $sm) {
+                margin-top: -16.5%;
+            }
+            @media(min-width: 1550px) {
+                margin-top: -15.5%;
+            }
+            @media(min-width: $xlg) {
+                margin-top: -14%;
+            }
+
+            .l-mission__item-inner {
+                img {
+                    margin-top: -15%;
+                    margin-left: 5%;
+                    max-width: 314px;
+                    width: 51.5625%;
+                    @media(min-width: $sm) {
+                        margin-top: -5%;
+                        width: 45%;
+                    }
+                }
+
+                p {
+                    @media(min-width: $sm) {
+                        margin-top: 1.5em;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            @media(min-width: $sm) {
+                margin-left: -1.25%;
+            }
+
+            .l-mission__item-inner {
+                img {
+                    margin-top: -30%;
+                    width: 71.25%;
+                    @media(min-width: $sm) {
+                        margin-top: -12.5%;
+                        width: 60%;
+                    }
+                }
+
+                p {
+                    @media(min-width: $sm) {
+                        margin-top: -1.5em;
+                        padding-right: clamp(40px, 6vw, 100px);
+                    }
+                }
+            }
+        }
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            @media(min-width: $sm) {
+                width: calc(47% - var(--gap) / 2);
+            }
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+            @media(min-width: $sm) {
+                width: calc(53% - var(--gap) / 2);
+            }
+        }
+
+        img {
+            display: block;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 900;
+            padding-right: 32px;
+            text-align: right;
+            text-transform: uppercase;
+            @media(min-width: $sm) {
+                font-size: clamp(14px, 1.375vw, 26px);
+                padding-left: clamp(40px, 3vw, 70px);
+                padding-right: clamp(40px, 3vw, 70px);
+            }
+        }
+    }
+
+    &__item-inner {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+}

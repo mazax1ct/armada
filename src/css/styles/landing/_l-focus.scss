@@ -1,0 +1,106 @@
+.l-focus {
+    background: linear-gradient(47.66deg, #C18C45 1.6%, #121415 82.04%);
+    margin-left: calc(0.02px - var(--container_padding));
+    margin-right: calc(0.02px - var(--container_padding));
+    padding-top: 80px;
+    padding-bottom: 80px;
+    z-index: 0;
+    @media(min-width: 1600px) {
+        margin-left: calc(-100vw / 2 + var(--container_max_width) / 2 - var(--container_padding));
+        margin-right: calc(-100vw / 2 + var(--container_max_width) / 2 - var(--container_padding));
+    }
+
+    h2 {
+        margin-bottom: 2em;
+    }
+
+    &__banner {
+        font-size: clamp(14px, 3vw, 32px);
+        font-weight: 900;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+            background-color: rgba(#fff, 0.1);
+            border-radius: 10em;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: -30px;
+            width: 100%;
+            z-index: 0;
+            @media(min-width: $hd) {
+                top: -60px;
+            }
+        }
+    }
+
+    &__banner-img-wrapper {
+        position: relative;
+        z-index: 0;
+
+        &::after,
+        &::before {
+            background-color: rgba(#fff, 0.1);
+            border-radius: 10em;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &::before {
+            top: -10px;
+            @media(min-width: $hd) {
+                top: -20px;
+            }
+        }
+
+        &::after {
+            top: -20px;
+            @media(min-width: $hd) {
+                top: -40px;
+            }
+        }
+    }
+
+    &__banner-img {
+        border-radius: 10em;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+
+        img {
+            display: block;
+            max-height: 520px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        &::after {
+            background-color: rgba(#000, 0.4);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+    }
+
+    &__banner-text {
+        left: 0;
+        margin: 0;
+        padding: clamp(2em, 8vw, 4em) clamp(3em, 8vw, 5em);
+        position: absolute;
+        top: 0;
+        max-width: 940px;
+        z-index: 3;
+    }
+}

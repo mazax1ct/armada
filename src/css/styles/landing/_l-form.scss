@@ -1,0 +1,324 @@
+.l-form-section {
+    h2 {
+        font-size: clamp(16px, 3vw, 36px);
+        font-weight: 900;
+        text-transform: uppercase;
+
+        span {
+            display: block;
+            @media(max-width: $sm - 0.02px) {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    &__text {
+        font-size: clamp(14px, 2vw, 30px);
+        margin-bottom: clamp(2em, 4vw, 5em);
+    }
+}
+
+.l-form {
+    background-color: rgba(#fff, 0.1);
+    border-radius: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 30px;
+    @media(max-width: 500px - 0.02px) {
+        margin-left: calc(0.01px - var(--container_padding));
+        margin-right: calc(0.01px - var(--container_padding));
+    }
+    @media(min-width: $md) {
+        max-width: 700px;
+        padding: 70px 50px;
+    }
+    @media(min-width: $lg) {
+        max-width: 940px;
+        padding: 75px;
+    }
+
+    h3 {
+        font-size: clamp(24px, 2vw, 36px);
+        font-weight: 900;
+        margin-bottom: 1em;
+        margin-top: 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.l-form_1 {
+    margin-bottom: 40px;
+    @media(min-width: $md) {
+        margin-bottom: 60px;
+    }
+    @media(min-width: $lg) {
+        margin-bottom: 90px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 25px;
+        @media(min-width: $lg) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__input,
+    &__textarea {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #5E5E61;
+        color: #fff;
+        font-size: 16px;
+        height: 40px;
+        padding: 0;
+        text-transform: uppercase;
+        transition: border-color 0.3s;
+        width: 100%;
+        @media(min-width: $lg) {
+            font-size: 36px;
+            height: 60px;
+        }
+
+        &:focus {
+            border-color: #fff;
+        }
+
+        &.error {
+            border-color: #c4334d;
+
+            &:focus {
+                border-color: #c4334d;
+            }
+        }
+
+        &::-webkit-input-placeholder {
+            color: #5E5E61;
+            opacity: 1;
+        }
+
+        &::-moz-placeholder {
+            color: #5E5E61;
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: #5E5E61;
+            opacity: 1;
+        }
+    }
+
+    &__textarea {
+        height: 80px;
+        margin: 0;
+        overflow: auto;
+        resize: none;
+        @media(min-width: $lg) {
+            height: 120px;
+        }
+    }
+
+    &__bottom {
+        text-align: center;
+        @media(min-width: $md) {
+            display: flex;
+            gap: 20px;
+        }
+
+        & > div {
+            &:first-child {
+                .l-form_1__note {
+                    @media(min-width: $md) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        @media(max-width: $md - 0.02px) {
+            max-width: 270px;
+        }
+        @media(min-width: $lg) {
+            font-size: 36px;
+            height: 80px;
+        }
+
+        &::after {
+            @media(min-width: $lg) {
+                left: 14px;
+                width: calc(100% - 28px);
+            }
+        }
+    }
+
+    &__note {
+        color: #A0A0A2;
+        font-size: 12px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        @media(min-width: $lg) {
+            font-size: 16px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: center;
+        @media(max-width: $md - 0.02px) {
+            margin-top: 25px;
+        }
+    }
+
+    &__social {
+        @media(min-width: $lg) {
+            height: 80px;
+            width: 140px;
+        }
+        @include hover {
+            svg {
+                fill: var(--primary_color);
+            }
+        }
+
+        svg {
+            fill: #fff;
+            height: 30px;
+            transition: fill 0.3s;
+            width: 30px;
+            @media(min-width: $lg) {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+    &__status {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+
+        &:empty {
+            display: none;
+        }
+
+        &.error {
+            color: #c4334d;
+        }
+
+        &.success {
+            color: #00d7b0;
+        }
+    }
+}
+
+.l-form_2 {
+    text-align: center;
+
+    &__label {
+        display: block;
+        position: relative;
+        margin-bottom: 25px;
+        z-index: 0;
+
+        span {
+            border-radius: 6px 12px;
+            background-color: #fff;
+            height: 100%;
+            left: 8px;
+            position: absolute;
+            top: 0;
+            transform: skewX(-26deg);
+            width: calc(100% - 16px);
+            z-index: 0;
+            @media(min-width: $lg) {
+                left: 14px;
+                width: calc(100% - 28px);
+            }
+        }
+    }
+
+    &__input {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        color: var(--text_color);
+        height: 50px;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+        @media(min-width: $lg) {
+            font-size: 36px;
+            height: 80px;
+        }
+
+        &.error {
+            & + span {
+                border: 2px solid #c4334d;
+            }
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        @media(max-width: $md - 0.02px) {
+            max-width: 270px;
+        }
+        @media(min-width: $lg) {
+            font-size: 36px;
+            height: 80px;
+        }
+
+        &::after {
+            @media(min-width: $lg) {
+                left: 14px;
+                width: calc(100% - 28px);
+            }
+        }
+    }
+
+    &__status {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+
+        &:empty {
+            display: none;
+        }
+
+        &.error {
+            color: #c4334d;
+        }
+
+        &.success {
+            color: #00d7b0;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 0;
+        margin-top: 25px;
+
+        .button {
+            flex-grow: 1;
+            @media(min-width: $md) {
+                padding-left: 0;
+                padding-right: 0;
+                width: 50%;
+            }
+            @media(min-width: $lg) {
+                font-size: 18px;
+                height: 70px;
+            }
+        }
+    }
+}
