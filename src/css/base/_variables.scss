@@ -18,7 +18,7 @@ $xlg: 1600px;
     --error_color: #F5495E;
     --success_color: #3FA562;
     --container_padding: 20px;
-    @media(min-width: $hd) {
+    @media(min-width: $xlg) {
         --container_padding: 50px;
     }
     --container_max_width: 1600px;

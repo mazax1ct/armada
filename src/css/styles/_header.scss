@@ -1,20 +1,62 @@
 .header {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    position: relative;
-    z-index: 2;
-    @media(min-width: $md) {
-        padding-top: 45px;
-        padding-bottom: 45px;
+    --horizontal_gap: 15px;
+    --font_size: 16px;
+    --horizontal_padding: 12px;
+    left: 0;
+    padding-top: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    @media(min-width: $md) and (max-width: $hd - 0.02px) {
+        --font_size: 10px;
+    }
+    @media(min-width: $sm) {
+        --horizontal_padding: 24px;
+        padding-top: 20px;
+    }
+    @media(min-width: $hd) {
+        --font_size: 12px;
+    }
+    @media(min-width: $lg) {
+        --horizontal_gap: 20px;
+        --horizontal_padding: 38px;
+    }
+    @media(min-width: $xlg) {
+        --horizontal_gap: 25px;
+    }
+
+    &.menu-is-open {
+        .main-menu__nav {
+            display: block;
+        }
+
+        .main-menu::after {
+            z-index: 10;
+        }
+
+        .header__burger,
+        .header__button,
+        .header__logo,
+        .header__phone {
+            z-index: 11;
+        }
     }
 
     &__inner {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
-        justify-content: space-between;
     }
 
     &__logo {
+        margin-right: 25px;
+        min-width: 44px;
+        width: 44px;
+        @media(min-width: $sm) {
+            min-width: 74px;
+            width: 74px;
+        }
+
         img {
             display: block;
         }
@@ -22,57 +64,120 @@
 
     &__burger {
         @include button-reset;
-        height: 35px;
-        width: 35px;
+        height: 32px;
+        @media(min-width: $sm) {
+            height: 50px;
+        }
         @media(min-width: $md) {
             display: none;
+        }
+        @include hover {
+            svg {
+                fill: var(--primary_color);
+            }
         }
 
         svg {
             fill: currentColor;
-            height: 35px;
-            width: 35px;
+            height: 13px;
+            transition: fill 0.3s;
+            width: 56px;
+            @media(min-width: $sm) {
+                height: 23px;
+                width: 98px;
+            }
+        }
+    }
+
+    &__phone {
+        align-items: center;
+        color: #fff;
+        display: inline-flex;
+        font-size: 13px;
+        height: 32px;
+        text-decoration: none;
+        white-space: nowrap;
+        @media(max-width: $sm - 0.02px) {
+            display: none;
+        }
+        @media(min-width: $sm) {
+            height: 50px;
+        }
+        @media(min-width: $md) and (max-width: $lg - 0.02px) {
+            display: none;
+        }
+        @include hover {
+            color: var(--primary_color);
+        }
+    }
+
+    &__button {
+        padding-left: var(--horizontal_padding);
+        padding-right: var(--horizontal_padding);
+        @media(min-width: $sm) {
+            padding-left: var(--horizontal_padding);
+            padding-right: var(--horizontal_padding);
+        }
+        @media(min-width: $md) {
+            font-size: var(--font_size);
         }
     }
 }
 
 .main-menu {
-    @media(max-width: $md - 0.02px) {
-        background-color: var(--text_color);
-        color: #fff;
-        display: none;
-        height: 100dvh;
-        left: 0;
-        overflow-y: auto;
-        position: fixed;
-        padding: var(--container_padding);
-        top: 0;
-        width: 100%;
-        z-index: 10;
+    align-items: center;
+    display: flex;
+    gap: var(--horizontal_gap);
+    font-size: var(--font_size);
+    font-weight: 900;
+    min-height: 32px;
+    margin-left: auto;
+    padding-left: var(--horizontal_padding);
+    padding-right: var(--horizontal_padding);
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    @media(min-width: $sm) {
+        min-height: 50px;
     }
 
-    &__top {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-        @media(min-width: $md) {
-            display: none;
+    &::after {
+        border-radius: 6px 12px;
+        background-color: rgba(#fff, 0.1);
+        backdrop-filter: blur(100px);
+        content: '';
+        height: 100%;
+        left: 3px;
+        position: absolute;
+        top: 0;
+        transform: skewX(-26deg);
+        width: calc(100% - 6px);
+        z-index: 0;
+        @media(min-width: $sm) {
+            left: 8px;
+            width: calc(100% - 16px);
         }
     }
 
-    &__closer {
-        @include button-reset;
-        align-items: center;
-        display: flex;
-        height: 35px;
-        justify-content: center;
-        width: 35px;
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
 
-        svg {
-            fill: currentColor;
-            height: 20px;
-            width: 20px;
+    &__nav {
+        @media(max-width: $md - 0.02px) {
+            background-color: rgba(#202427, 0.01);
+            backdrop-filter: blur(100px);
+            display: none;
+            height: 100dvh;
+            left: 0;
+            overflow-y: auto;
+            position: fixed;
+            padding: 110px var(--container_padding) var(--container_padding);
+            text-align: right;
+            top: 0;
+            width: 100%;
+            z-index: 10;
         }
     }
 
@@ -81,19 +186,13 @@
         @media(min-width: $md) {
             align-items: center;
             display: flex;
-            gap: 0 40px;
+            gap: var(--horizontal_gap);
         }
     }
 
     &__item {
         position: relative;
         z-index: 1;
-
-        &:not(:last-child) {
-            @media(max-width: $md - 0.02px) {
-                margin-bottom: 20px;
-            }
-        }
         @include hover {
             @media(min-width: $md) {
                 .submenu {
@@ -105,24 +204,32 @@
 
     &__link {
         @include active-area;
-        font-weight: 500;
+        align-items: center;
+        color: #fff;
+        display: inline-flex;
+        gap: 8px;
+        height: 60px;
         position: relative;
+        text-decoration: none;
+        white-space: nowrap;
         z-index: 1;
-        @media(max-width: $md - 0.02px) {
-            color: #fff;
-            font-size: 24px;
+        @media(min-width: $sm) {
+            height: 50px;
+        }
+        @include hover {
+            color: var(--primary_color);
         }
 
         &--root {
-            align-items: center;
-            display: inline-flex;
-
             svg {
                 fill: currentColor;
-                height: 16px;
-                width: 16px;
-                @media(max-width: $md - 0.02px) {
-                    margin-top: 4px;
+                height: 12px;
+                width: 12px;
+            }
+
+            &.is-active {
+                svg {
+                    transform: rotate(-180deg);
                 }
             }
         }
@@ -130,45 +237,54 @@
 }
 
 .submenu {
+    font-size: 10px;
+    text-align: left;
     @media(max-width: $md - 0.02px) {
         display: none;
-        padding-left: 20px;
-        padding-top: 20px;
     }
     @media(min-width: $md) {
-        border-radius: 20px;
-        background-color: var(--grey_color);
         display: none;
-        font-weight: 500;
-        left: 50%;
+        left: 0;
         position: absolute;
-        padding: 20px;
+        padding-top: 8px;
         top: 100%;
-        text-align: center;
-        transform: translateX(-50%);
         transition: display 0.3s;
         z-index: 2;
     }
 
     &__list {
         @include list-reset;
+        @media(min-width: $md) {
+            border-radius: 30px;
+            background-color: rgba(#fff, 0.1);
+            backdrop-filter: blur(100px);
+            padding: 20px;
+        }
     }
 
     &__item {
         &:not(:last-child) {
-            margin-bottom: 20px;
-            @media(min-width: $md) {
-                margin-bottom: 10px;
-            }
+            margin-bottom: 10px;
         }
     }
 
     &__link {
-        @media(max-width: $md - 0.02px) {
-            color: #fff;
-        }
+        align-items: center;
+        color: #fff;
+        display: flex;
+        gap: 16px;
+        text-decoration: none;
         @media(min-width: $md) {
             white-space: nowrap;
+        }
+        @include hover {
+            color: var(--primary_color);
+        }
+
+        img {
+            border-radius: 50%;
+            min-width: 50px;
+            width: 50px;
         }
     }
 }

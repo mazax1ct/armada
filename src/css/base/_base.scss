@@ -39,6 +39,32 @@ html {
     &--white {
         background-color: #fff;
         color: var(--text_color);
+
+        .main-menu {
+            &::after {
+                background-color: #F4F4F5;
+                backdrop-filter: blur(0);
+            }
+        }
+
+        .submenu__list {
+            @media(min-width: $md) {
+                background-color: #F4F4F5;
+                backdrop-filter: blur(0);
+            }
+        }
+
+        .footer a:not([class]),
+        .header__phone,
+        .main-menu__link,
+        .submenu__link {
+            color: var(--text_color);
+        }
+
+        .footer__bottom::before,
+        .footer__inner {
+            background-color: rgba(#9192A0, 0.1);
+        }
     }
 
     &.is-overflow {
@@ -47,9 +73,11 @@ html {
 
     &__content {
         flex: 1 0 auto;
+        padding-top: 90px;
         padding-bottom: 40px;
         overflow: hidden;
         @media(min-width: $sm) {
+            padding-top: 150px;
             padding-bottom: 80px;
         }
     }
