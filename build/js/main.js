@@ -26,3 +26,80 @@ $(document).on('click', '.js-submenu-toggler', function () {
     return false;
   }
 });
+
+$(document).ready(function() {
+  if($('.main-banner__bg').length) {
+    $(window).scroll(function() {
+      let scrollWindowTop = window.scrollY;
+      $('.main-banner__bg').css({transform: 'translateY('+scrollWindowTop+'px)'});
+    });
+  }
+
+  if($('.js-slider').length) {
+    $('.js-slider').each(function(index) {
+      let slider = new Swiper($(this)[0], {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          type: "fraction",
+          el: '.js-slider-navigation[data-id="'+$(this).attr('data-id')+'"]',
+        },
+        navigation: {
+          nextEl: '.js-slider-next[data-id="'+$(this).attr('data-id')+'"]',
+          prevEl: '.js-slider-prev[data-id="'+$(this).attr('data-id')+'"]',
+        }
+      });
+    });
+  }
+
+  $('.js-form').each(function() {
+      var form = $(this),
+          btn = form.find('button[type="submit"]'),
+          formStatus = form.find('.js-form-status');
+
+      function checkInput() {
+          form.find(':required').each(function() {
+              if($(this).val() != '') {
+                  $(this).removeClass('error');
+              } else {
+                  $(this).addClass('error');
+              }
+          });
+      }
+
+      btn.click(function() {
+          checkInput();
+      });
+
+      form[0].onsubmit = async(e) => {
+          e.preventDefault();
+
+          /*let response = await fetch('/local/ajax/vacancy_form.php', {
+              method: 'POST',
+              body: new FormData(formElem)
+          });*/
+
+          //let result = await response.json();
+
+          let result = {
+              STATUS: 'ERROR',
+              ERROR: 'Произошла ошибка. Попробуйте позже или напишите нам на почту armada-hockey@mail.ru',
+          }
+
+          if (result.STATUS == 'ERROR') {
+              // вывести result.ERROR
+              formStatus.addClass('error').html(result.ERROR);
+          } else {
+              // вывести успешная отправка
+              formStatus.removeClass('error').html('Ваша заявка принята');
+          }
+      };
+  });
+
+  $(document).on('change', '[required]', function () {
+     if($(this).val() !== ''){
+         $(this).removeClass('error');
+     }
+  });
+});

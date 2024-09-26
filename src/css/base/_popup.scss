@@ -1,55 +1,159 @@
 .popup {
-    border-radius: 24px;
+    border-radius: 0;
     background-color: #fff;
+    color: var(--text_color);
     display: none;
     position: relative;
     width: 100%;
 
     &.fancybox-content {
+        max-width: 960px;
         overflow: visible;
-        padding: 24px;
+        padding: 60px 20px;
+        @media(max-width: $sm - 0.02px) {
+            min-height: 100%;
+        }
         @media(min-width: $sm) {
+            border-radius: 100px;
             padding: 60px;
-        }
-
-        &.popup--w_700 {
-            max-width: 700px;
-        }
-
-        &.popup--w_800 {
-            max-width: 800px;
-        }
-
-        &.popup--w_900 {
-            max-width: 900px;
         }
     }
 
-    &__closer {}
+    &__title {
+        font-size: 18px;
+        font-weight: 900;
+        margin-bottom: 50px;
+        padding-right: 40px;
+        text-transform: uppercase;
+        @media(min-width: $sm) {
+            font-size: 32px;
+        }
+    }
+
+    &__form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+
+    &__form-row {
+        margin-bottom: 15px;
+    }
+
+    &__form-label {
+        color: #81898F;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    &__form-note {
+        color: #81898F;
+        font-size: 14px;
+    }
+
+    &__form-status {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+
+        &:empty {
+            display: none;
+        }
+
+        &.error {
+            color: #c4334d;
+        }
+
+        &.success {
+            color: #00d7b0;
+        }
+    }
+
+    &__form-submit {
+        width: 100%;
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px 0;
+        margin-top: 50px;
+    }
+
+    &__link {
+        align-items: center;
+        color: var(--primary_color);
+        display: flex;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 900;
+        height: 120px;
+        justify-content: center;
+        padding: 24px;
+        position: relative;
+        transition: color 0.3s;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+        z-index: 1;
+        @media(min-width: $md) {
+            width: calc(100% / 3);
+        }
+
+        &::before {
+            border-radius: 20px 30px;
+            background-color: rgba(#9192A0, 0.1);
+            content: '';
+            left: 8px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transform: skewX(-12deg);
+            transition: background-color 0.3s, opacity 0.3s;
+            width: calc(100% - 16px);
+            z-index: 0;
+        }
+        @include hover {
+            color: var(--text_color);
+        }
+
+        svg {
+            fill: currentColor;
+            height: 24px;
+            min-width: 24px;
+            width: 24px;
+        }
+    }
 }
 
 .fancybox-slide--html {
+    @media(max-width: $sm - 0.02px) {
+        padding: 0;
+    }
+
     .fancybox-close-small {
-        &.popup__closer {
+        &.popup__close {
             @include button-reset;
+            @include active-area;
             align-items: center;
-            color: #fff;
+            color: #81898F;
             cursor: pointer;
             display: flex;
-            height: 40px;
+            height: 24px;
             justify-content: center;
             left: auto;
             opacity: 1;
             position: absolute;
-            right: 0;
-            top: -40px;
+            right: 20px;
+            top: 62px;
             transition: color 0.3s;
-            width: 40px;
+            width: 24px;
             z-index: 1;
             @media(min-width: $sm) {
-                color: var(--text_color);
-                right: 16px;
-                top: 16px;
+                right: 60px;
+                top: 72px;
             }
             @include hover {
                 color: var(--primary_color);
@@ -57,8 +161,8 @@
 
             svg {
                 fill: currentColor;
-                height: 20px;
-                width: 20px;
+                height: 24px;
+                width: 24px;
             }
         }
     }

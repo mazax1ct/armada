@@ -1,0 +1,12 @@
+.chips {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 40px;
+    margin-left: calc(0.01px - var(--container_padding));
+    margin-right: calc(0.01px - var(--container_padding));
+    padding-left: var(--container_padding);
+    padding-right: var(--container_padding);
+    @media(min-width: $lg) {
+        margin-bottom: 60px;
+    }
+}

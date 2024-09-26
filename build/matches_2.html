@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>АРМАДА</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#c18c45">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preload" href="fonts/subset-2MASSJ1808-Normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-2MASSJ1808-Heavy.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="plugins_css/jquery.fancybox.css" />
+    
+    <link rel="stylesheet" href="plugins_css/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page">
+    <svg style="position: absolute; height: 0; width: 0">
+        <clipPath id="slider_clip" clipPathUnits="objectBoundingBox">
+            <path d="M0.963,0 L0.035,0.047 C0.015,0.048,-0.001,0.078,0.001,0.114 L0.04,0.912 C0.041,0.944,0.057,0.968,0.075,0.969 L0.922,1 C0.941,1,0.957,0.976,0.958,0.943 L1,0.068 C1,0.031,0.985,-0.001,0.963,0" />
+        </clipPath>
+        <clipPath id="image_clip" clipPathUnits="objectBoundingBox">
+            <path d="M0.963,0 L0.035,0.047 C0.015,0.048,-0.001,0.078,0.001,0.114 L0.04,0.912 C0.041,0.944,0.057,0.968,0.075,0.969 L0.922,1 C0.941,1,0.957,0.976,0.958,0.943 L1,0.068 C1,0.031,0.985,-0.001,0.963,0" />
+        </clipPath>
+        <clipPath id="coach_clip" clipPathUnits="objectBoundingBox">
+            <path d="M0.039,0.053 C0.04,0.025,0.059,0.003,0.082,0.003 L0.91,0.001 C0.933,0,0.951,0.022,0.953,0.05 L1,0.913 C1,0.943,0.984,0.969,0.96,0.969 L0.045,1 C0.02,1,-0.001,0.977,0.001,0.946 L0.039,0.053"></path>
+        </clipPath>
+        <clipPath id="contacts_clip" clipPathUnits="objectBoundingBox">
+            <path d="M0,0.103 C0,0.045,0.022,-0.001,0.048,0.002 L0.957,0.104 C0.986,0.107,1,0.171,0.998,0.234 L0.915,0.854 C0.909,0.895,0.892,0.924,0.873,0.926 L0.048,1 C0.022,1,0,0.958,0,0.901 V0.103" />
+        </clipPath>
+    </svg>
+
+    <main class="page__content">
+        <header class="header">
+            <div class="header__inner container">
+                <a class="header__logo" href="#">
+                    <img src="images/logo.png" alt="АРМАДА">
+                </a>
+        
+                <div class="main-menu">
+                    <nav class="main-menu__nav">
+                        <ul class="main-menu__list">
+                            <li class="main-menu__item">
+                                <a class="js-submenu-toggler main-menu__link main-menu__link--root" href="#">
+                                    <span>О компании</span>
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down" />
+                                    </svg>
+                                </a>
+        
+                                <div class="submenu">
+                                    <ul class="submenu__list">
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="#">
+                                                <img src="images/content/menu/img_1.jpg" srcset="images/content/menu/img_1@2x.jpg 2x" alt="">
+                                                <span>ХК «Армада»</span>
+                                            </a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="#">
+                                                <img src="images/content/menu/img_2.jpg" srcset="images/content/menu/img_2@2x.jpg 2x" alt="">
+                                                <span>Об арене</span>
+                                            </a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="#">
+                                                <img src="images/content/menu/img_3.jpg" srcset="images/content/menu/img_3@2x.jpg 2x" alt="">
+                                                <span>Начальная подготовка</span>
+                                            </a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="#">
+                                                <img src="images/content/menu/img_4.jpg" srcset="images/content/menu/img_4@2x.jpg 2x" alt="">
+                                                <span>Атрибутика</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Команды</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Тренеры</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Матчи</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Новости</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Абонементы</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Маркет</a>
+                            </li>
+        
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+        
+                    <a class="header__phone" href="tel:+79291171771">+7 929 117 1771</a>
+        
+                    <button class="js-menu-toggler header__burger" type="button" title="Открыть меню">
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#burger" />
+                        </svg>
+                    </button>
+                </div>
+        
+                <button class="header__button button button--type_1 button--h_32_50" type="button" data-fancybox="form_popup" data-src="#form_popup"><span>Вступить в&nbsp;АРМАДУ</span></button>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1 class="big-title"><span>Матчи</span></h1>
+
+            <div class="chips">
+                <a class="button button--type_2 button--h_50" href="#"><span>Скоро</span></a>
+
+                <a class="button button--type_1 button--h_50" href="#"><span>Прошедшие</span></a>
+            </div>
+
+            <div class="matches">
+                <div class="matches__image">
+                    <img src="images/content/matches/cup.png" srcset="images/content/matches/cup@2x.png 2x" alt="">
+                </div>
+
+                <div class="matches__list-block">
+                    <div class="matches__list">
+                        <div class="match">
+                            <p class="match__date">31 июля, 17:00 мск</p>
+                            <p class="match__result"><span>Орлы</span> 0</p>
+                            <p class="match__result"><span>Медведи</span> 0</p>
+                            <p class="text-center">
+                                <a class="match__button" href="#"><span><span class="icon"></span> <span class="mobile-hidden">Смотреть</span>видео</span></a>
+                            </p>
+                        </div>
+
+                        <div class="match">
+                            <p class="match__date">31 июля, 17:00 мск</p>
+                            <p class="match__result"><span>Орлы</span> 0</p>
+                            <p class="match__result"><span>Медведи</span> 0</p>
+                            <p class="text-center">
+                                <a class="match__button" href="#"><span><span class="icon"></span> <span class="mobile-hidden">Смотреть</span>видео</span></a>
+                            </p>
+                        </div>
+
+                        <div class="match">
+                            <p class="match__date">31 июля, 17:00 мск</p>
+                            <p class="match__result"><span>Орлы</span> 0</p>
+                            <p class="match__result"><span>Медведи</span> 0</p>
+                            <p class="text-center">
+                                <a class="match__button" href="#"><span><span class="icon"></span> <span class="mobile-hidden">Смотреть</span>видео</span></a>
+                            </p>
+                        </div>
+
+                        <div class="match">
+                            <p class="match__date">31 июля, 17:00 мск</p>
+                            <p class="match__result"><span>Орлы</span> 0</p>
+                            <p class="match__result"><span>Медведи</span> 0</p>
+                            <p class="text-center">
+                                <a class="match__button" href="#"><span><span class="icon"></span> <span class="mobile-hidden">Смотреть</span>видео</span></a>
+                            </p>
+                        </div>
+
+                        <div class="match">
+                            <p class="match__date">31 июля, 17:00 мск</p>
+                            <p class="match__result"><span>Орлы</span> 0</p>
+                            <p class="match__result"><span>Медведи</span> 0</p>
+                            <p class="text-center">
+                                <a class="match__button" href="#"><span><span class="icon"></span> <span class="mobile-hidden">Смотреть</span>видео</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__top-left">
+                    <div class="footer__logo">
+                        <img src="images/footer_logo.png" alt="АРМАДА">
+                    </div>
+    
+                    <a href="mailto:armada-hockey@mail.ru">armada-hockey@mail.ru</a>
+    
+                    <a href="tel:+79291171771">+7 929 117 1771</a>
+    
+                    <button class="button button--type_1 button--h_32_50" type="button" data-fancybox="form_popup_footer" data-src="#form_popup"><span>Вступить в Армаду</span></button>
+                </div>
+    
+                <div class="footer__top-right">
+                    <div class="footer__slogan">
+                        <p>Хоккей — это не только<br> захватывающая игра,<br> но и отличный способ укрепить<br> свое здоровье</p>
+                    </div>
+    
+                    <div class="footer__contacts">
+                        <div class="footer__contacts-column">
+                            <p class="footer__contacts-title">Адрес</p>
+    
+                            <p>195176, г.&nbsp;Санкт‑Петербург,<br> ш.&nbsp;Революции,&nbsp;д.&nbsp;18а, пом.&nbsp;2‑Н, каб.&nbsp;11</p>
+                        </div>
+    
+                        <div class="footer__contacts-column">
+                            <p class="footer__contacts-title">Команды</p>
+    
+                            <ul class="footer__contacts-list">
+                                <li><a href="#">Орлы</a></li>
+                                <li><a href="#">Медведи</a></li>
+                                <li><a href="#">Крокодилы</a></li>
+                            </ul>
+                        </div>
+    
+                        <div class="footer__contacts-column">
+                            <p class="footer__contacts-title">Мы в соц. сетях</p>
+    
+                            <ul class="footer__contacts-list">
+                                <li><a href="#" target="_blank">Вконтакте</a></li>
+                                <li><a href="#" target="_blank">YouTube</a></li>
+                                <li><a href="#" target="_blank">Телеграм</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer__bottom">
+                <div class="footer__bottom-inner">
+                    <div class="footer__copyrights">© 2024 АРМАДА</div>
+    
+                    <a href="#">Политика конфиденциальности</a>
+    
+                    <a href="#">Разработка сайта cake.ru</a>
+    
+                    <a href="#">При поддержке <img src="images/psp_logo.png" alt="ПСПФНР"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="form_popup" class="popup">
+        <p class="popup__title">Вступить в армаду</p>
+    
+        <div class="popup__form">
+            <form class="js-form" action="">
+                <div class="popup__form-row">
+                    <label class="popup__form-label" for="phone">Телефон</label>
+                    <input id="phone" class="js-phone-mask input" name="PHONE" type="text" required placeholder="+7 ___ ___ __ __">
+                </div>
+    
+                <div class="popup__form-row">
+                    <label class="popup__form-label" for="email">Email</label>
+                    <input id="email" class="js-email-mask input" name="EMAIL" type="text" required placeholder="email@email.ru">
+                </div>
+    
+                <p class="popup__form-row popup__form-note">Нажимая кнопку «Отправить» вы соглашаетесь на обработку <a href="#">персональных данных</a></p>
+    
+                <div class="js-form-status popup__form-status"></div>
+    
+                <button class="popup__form-submit button button--type_1 button--h_50" type="submit"><span>Отправить</span></button>
+            </form>
+        </div>
+    
+        <div class="popup__links">
+            <a class="popup__link" href="#">
+                <span>Абонементы</span>
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#arrow_right"></use>
+                </svg>
+            </a>
+    
+            <a class="popup__link" href="#">
+                <span>Поддержка семей</span>
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#arrow_right"></use>
+                </svg>
+            </a>
+    
+            <a class="popup__link" href="#">
+                <span>Что нужно на первое занятие?</span>
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#arrow_right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/fancybox-defaults.js"></script>
+    
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/inputmask-init.js"></script>
+    
+    <script src="js/swiper-bundle.min.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>

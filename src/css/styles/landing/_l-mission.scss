@@ -80,11 +80,14 @@
             @media(min-width: $sm) {
                 margin-top: -16.5%;
             }
-            @media(min-width: 1550px) {
+            @media(min-width: 1300px) {
+                margin-top: -16%;
+            }
+            @media(min-width: $lg) {
                 margin-top: -15.5%;
             }
-            @media(min-width: $xlg) {
-                margin-top: -14%;
+            @media(min-width: 1500px) {
+                margin-top: -14.5%;
             }
 
             .l-mission__item-inner {

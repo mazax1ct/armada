@@ -1,0 +1,30 @@
+.pager {
+    @include list-reset;
+    color: #fff;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+
+    &__arrow {
+        @media(max-width: $sm - 0.02px) {
+            display: none;
+        }
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+
+        &.button--type_1 {
+            cursor: default;
+        }
+
+        svg {
+            fill: currentColor;
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
