@@ -69,5 +69,20 @@
                 margin-top: auto;
             }
         }
+
+        &--2 {
+            p {
+                font-size: clamp(20px, 3vw, 56px);
+
+                span {
+                    opacity: 0.4;
+                    transition: opacity 0.3s;
+
+                    &.is-active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
