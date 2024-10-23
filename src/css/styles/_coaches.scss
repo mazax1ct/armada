@@ -19,6 +19,9 @@
 
     .coach {
         width: calc(100% / 2 - var(--horizontal_gap) / 2);
+        @media(min-width: $md) {
+            width: calc(100% / 3 - var(--horizontal_gap) * 2 / 3);
+        }
     }
 }
 
@@ -78,6 +81,8 @@
 }
 
 .coach-image {
+    max-width: 600px;
+
     img {
         clip-path: url("#coach_clip");
         display: block;
