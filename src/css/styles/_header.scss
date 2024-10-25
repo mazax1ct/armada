@@ -26,7 +26,12 @@
         --horizontal_gap: 25px;
     }
 
+    &--stick_on_top {
+        position: absolute;
+    }
+
     &.menu-is-open {
+        .l-menu__nav,
         .main-menu__nav {
             display: block;
         }
@@ -55,6 +60,14 @@
         @media(min-width: $sm) {
             min-width: 74px;
             width: 74px;
+        }
+
+        &--big {
+            @media(min-width: $lg) {
+                margin-right: 40px;
+                min-width: 115px;
+                width: 115px;
+            }
         }
 
         img {

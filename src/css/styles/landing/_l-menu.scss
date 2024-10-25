@@ -1,0 +1,123 @@
+.l-menu {
+    align-items: center;
+    display: flex;
+    gap: var(--horizontal_gap);
+    font-size: var(--font_size);
+    font-weight: 900;
+    min-height: 32px;
+    margin-left: auto;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    @media(min-width: $sm) {
+        min-height: 50px;
+    }
+    @media(min-width: $md) {
+        font-size: 14px;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    @media(min-width: $lg) {
+        font-size: 20px;
+    }
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__nav {
+        @media(max-width: $md - 0.02px) {
+            background-color: rgba(#202427, 0.01);
+            backdrop-filter: blur(100px);
+            display: none;
+            height: 100dvh;
+            left: 0;
+            overflow-y: auto;
+            position: fixed;
+            padding: 110px var(--container_padding) var(--container_padding);
+            text-align: right;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+    }
+
+    &__list {
+        @include list-reset;
+        @media(min-width: $md) {
+            align-items: center;
+            display: flex;
+            gap: var(--horizontal_gap);
+        }
+    }
+
+    &__item {
+        position: relative;
+        z-index: 1;
+        @include hover {
+            @media(min-width: $md) {
+                .submenu {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__link {
+        @include active-area;
+        align-items: center;
+        color: #fff;
+        display: inline-flex;
+        gap: 8px;
+        height: 60px;
+        position: relative;
+        text-decoration: none;
+        white-space: nowrap;
+        z-index: 1;
+        @media(min-width: $sm) {
+            height: 50px;
+        }
+        @include hover {
+            color: var(--primary_color);
+        }
+
+        &--root {
+            svg {
+                fill: currentColor;
+                height: 12px;
+                width: 12px;
+            }
+
+            &.is-active {
+                svg {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    .header__burger {
+        padding-left: var(--horizontal_padding);
+        padding-right: var(--horizontal_padding);
+
+        &::after {
+            border-radius: 6px 12px;
+            background-color: rgba(#fff, 0.1);
+            backdrop-filter: blur(100px);
+            content: '';
+            height: 100%;
+            left: 3px;
+            position: absolute;
+            top: 0;
+            transform: skewX(-26deg);
+            width: calc(100% - 6px);
+            z-index: 0;
+        }
+
+        svg {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

@@ -1,24 +1,37 @@
-<header class="l-header">
-    <picture>
-        <img src="images/content/landing/banner/desk.jpg" srcset="images/content/landing/banner/desk@2x.jpg 2x" alt="">
-    </picture>
+<header class="header header--stick_on_top">
+    <div class="header__inner container">
+        <a class="header__logo header__logo--big" href="#">
+            <img src="images/logo.png" alt="АРМАДА">
+        </a>
 
-    <div class="l-header__inner container">
-        <div class="l-header__logo"><img src="images/logo.png" alt="АРМАДА"></div>
+        <div class="l-menu">
+            <nav class="l-menu__nav">
+                <ul class="l-menu__list">
+                    <li class="l-menu__item">
+                        <a class="l-menu__link" href="#">Абонементы</a>
+                    </li>
 
-        <h1>Армада — сила<br> в единстве</h1>
+                    <li class="l-menu__item">
+                        <a class="l-menu__link" href="#">Тренеры</a>
+                    </li>
 
-        <p>хоккейный клуб</p>
+                    <li class="l-menu__item">
+                        <a class="l-menu__link" href="#">Акции</a>
+                    </li>
 
-        <div class="l-header__button-block">
-            <button class="button button--type_3" type="button">
-                <span>
-                    <span>Записаться на первое<br> бесплатное занятие</span>
-                    <svg aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#arrow_right" />
-                    </svg>
-                </span>
+                    <li class="l-menu__item">
+                        <a class="l-menu__link" href="#">Расписание</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="js-menu-toggler header__burger" type="button" title="Открыть меню">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#burger" />
+                </svg>
             </button>
         </div>
+
+        <button class="header__button button button--type_1 button--h_32_50" type="button" data-fancybox="form_popup" data-src="#form_popup"><span>Вступить в&nbsp;АРМАДУ</span></button>
     </div>
 </header>

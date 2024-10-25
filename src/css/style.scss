@@ -15,9 +15,6 @@
 @import "styles/_header.scss";
 @import "styles/_footer.scss";
 @import "styles/_main-banner.scss";
-@import "styles/landing/_l-why.scss";
-@import "styles/landing/_l-focus.scss";
-@import "styles/landing/_l-mission.scss";
 @import "styles/_news.scss";
 @import "styles/_teams.scss";
 @import "styles/_team.scss";
@@ -26,10 +23,10 @@
 @import "styles/_contacts.scss";
 @import "styles/_prices.scss";
 @import "styles/_gallery.scss";
-/*@import "styles/landing/_l-header.scss";
+@import "styles/landing/_l-menu.scss";
+@import "styles/landing/_l-banner.scss";
 @import "styles/landing/_l-section.scss";
 @import "styles/landing/_l-why.scss";
-
 @import "styles/landing/_l-focus.scss";
 @import "styles/landing/_l-mission.scss";
-@import "styles/landing/_l-form.scss";*/
+@import "styles/landing/_l-form.scss";

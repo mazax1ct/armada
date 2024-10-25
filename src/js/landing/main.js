@@ -1,3 +1,17 @@
+$(document).on('click', '.js-menu-toggler', function() {
+  var _this = $(this);
+  if(!_this.hasClass('is-active')) {
+    $('body').addClass('is-overflow');
+    $('.header').addClass('menu-is-open');
+    $(this).addClass('is-active');
+  } else {
+    $('body').removeClass('is-overflow');
+    $('.header').removeClass('menu-is-open');
+    $(this).removeClass('is-active');
+  }
+  return false;
+});
+
 $(document).ready(function() {
   $('.js-form').each(function() {
       var form = $(this),
