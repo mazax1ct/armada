@@ -31,8 +31,7 @@
 </head>
 
 <body class="page page--main">
-
-    <header class="header header--stick_on_top">
+    <header class="header header--fixed">
         <div class="header__inner container">
             <a class="header__logo header__logo--big" href="#">
                 <img src="images/logo.png" alt="АРМАДА">
@@ -42,19 +41,19 @@
                 <nav class="l-menu__nav">
                     <ul class="l-menu__list">
                         <li class="l-menu__item">
-                            <a class="l-menu__link" href="#">Абонементы</a>
+                            <a class="l-menu__link" href="#actions">Акции</a>
                         </li>
     
                         <li class="l-menu__item">
-                            <a class="l-menu__link" href="#">Тренеры</a>
+                            <a class="l-menu__link" href="#prices">Абонементы</a>
                         </li>
     
                         <li class="l-menu__item">
-                            <a class="l-menu__link" href="#">Акции</a>
+                            <a class="l-menu__link" href="#trainers">Тренеры</a>
                         </li>
     
                         <li class="l-menu__item">
-                            <a class="l-menu__link" href="#">Расписание</a>
+                            <a class="l-menu__link" href="#timing">Расписание</a>
                         </li>
                     </ul>
                 </nav>
@@ -66,7 +65,19 @@
                 </button>
             </div>
     
-            <button class="header__button button button--type_1 button--h_32_50" type="button" data-fancybox="form_popup" data-src="#form_popup"><span>Вступить в&nbsp;АРМАДУ</span></button>
+            <div class="call-back" data-fancybox="callback" data-src="#callback_popup">
+                <div class="call-back__phone">
+                    <span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#phone" />
+                        </svg>
+                        +7 929 117 1771
+                    </span>
+                </div>
+                <button class="call-back__button" type="button">
+                    <span><small>Заказать</small> <b>обратный звонок</b></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -85,14 +96,14 @@
                 <p>хоккейный клуб</p>
         
                 <div class="l-banner__button-block">
-                    <button class="button button--type_3" type="button">
+                    <a class="button button--type_3" href="#to_form">
                         <span>
                             <span>Записаться на первое<br> бесплатное занятие</span>
                             <svg aria-hidden="true">
                                 <use xlink:href="images/sprite.svg#arrow_right" />
                             </svg>
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         
@@ -131,7 +142,35 @@
                 </p>
             </section>
 
-            <section class="l-section">
+            <section id="actions" class="l-section">
+                <h2 class="big"><span><span>Предложения<br> и акции</span> <img src="images/content/titles/actions@2x.png" alt=""></span></h2>
+            
+                <div class="actions">
+                    <div class="action">
+                        <p><span class="color-primary">Бесплатное</span> пробное занятие</p>
+                    </div>
+            
+                    <div class="action">
+                        <p><span class="color-primary">Скидка 50%</span> для детей участников СВО</p>
+                    </div>
+            
+                    <div class="action">
+                        <p><span class="color-primary">Скидка 50%</span> на абонемент для второго и последующего ребенка + льготы для многодетных семей</p>
+                    </div>
+            
+                    <div class="action">
+                        <p><span class="color-primary">Бесплатная</span> экипировка на пробный период (кроме коньков)</p>
+                    </div>
+            
+                    <div class="action action--wide">
+                        <span>
+                            <button class="button button--type_1 button--h_32_50" type="button" data-fancybox="signup_popup" data-src="#signup_popup"><span>Записаться</span></button>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="prices" class="l-section">
                 <h2 class="big">Абонементы</h2>
             
                 <div class="prices">
@@ -162,6 +201,190 @@
                         </span>
                     </a>
                 </p>
+            </section>
+
+            <section id="trainers" class="l-section l-trainers">
+                <div class="container">
+                    <div class="trainers-slider">
+                        <div class="trainers-slider__title-block">
+                            <h2>Наши тренеры</h2>
+            
+                            <div class="trainers-slider__nav">
+                                <button class="js-slider-prev swiper-button-prev" type="button" title="Назад" data-slider="trainers_slider">
+                                    <span>
+                                        <svg aria-hidden="true">
+                                            <use xlink:href="images/sprite.svg#arrow_left"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+            
+                                <button class="js-slider-next swiper-button-next" type="button" title="Вперёд" data-slider="trainers_slider">
+                                    <span>
+                                        <svg aria-hidden="true">
+                                            <use xlink:href="images/sprite.svg#arrow_right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+            
+                        <div class="js-trainers-slider trainers-slider__slider swiper" data-slider="trainers_slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="trainer-card">
+                                        <div class="trainer-card__image">
+                                            <img src="images/content/landing/trainers/img.jpg" srcset="images/content/landing/trainers/img@2x.jpg 2x" alt="Фомич Андрей Витальевич">
+                                        </div>
+                                        <p class="trainer-card__title">Фомич Андрей Витальевич</p>
+            
+                                        <p class="trainer-card__position">Тренер спортивно-оздоровительной группы (СОГ) и вратарей</p>
+            
+                                        <p>Выпускник Академии СКА и НГУ имени П.Ф. Лесгафта. Девятилетний тренерский стаж и опыт работы в Финляндии, Андрей Витальевич использует передовые методики двух хоккейных держав для подготовки вратарей высокого уровня.
+                                            Среди его воспитанников уже есть несколько восходящих звезд, стремящихся к успехам в Молодежной Хоккейной лиге.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trainer-card">
+                                        <div class="trainer-card__image">
+                                            <img src="images/content/landing/trainers/img.jpg" srcset="images/content/landing/trainers/img@2x.jpg 2x" alt="Шадрин Андрей Юрьевич">
+                                        </div>
+                                        <p class="trainer-card__title">Шадрин Андрей Юрьевич</p>
+            
+                                        <p class="trainer-card__position">Тренер спортивно-оздоровительной группы (СОГ)</p>
+            
+                                        <p> Воспитанник хоккейного клуба СКА. Андрей Юрьевич имеет богатый игровой опыт в МХЛ (Молодёжной хоккейной лиге) и европейской высшей лиге. Имеет высшее тренерское образование и статус тренера второй категории, Андрей
+                                            Юрьевич успешно развивает юных спортсменов, прививая им любовь к хоккею.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trainer-card">
+                                        <div class="trainer-card__image">
+                                            <img src="images/content/landing/trainers/img.jpg" srcset="images/content/landing/trainers/img@2x.jpg 2x" alt="Фомич Андрей Витальевич">
+                                        </div>
+                                        <p class="trainer-card__title">Фомич Андрей Витальевич</p>
+            
+                                        <p class="trainer-card__position">Тренер спортивно-оздоровительной группы (СОГ) и вратарей</p>
+            
+                                        <p>Выпускник Академии СКА и НГУ имени П.Ф. Лесгафта. Девятилетний тренерский стаж и опыт работы в Финляндии, Андрей Витальевич использует передовые методики двух хоккейных держав для подготовки вратарей высокого уровня.
+                                            Среди его воспитанников уже есть несколько восходящих звезд, стремящихся к успехам в Молодежной Хоккейной лиге.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trainer-card">
+                                        <div class="trainer-card__image">
+                                            <img src="images/content/landing/trainers/img.jpg" srcset="images/content/landing/trainers/img@2x.jpg 2x" alt="Шадрин Андрей Юрьевич">
+                                        </div>
+                                        <p class="trainer-card__title">Шадрин Андрей Юрьевич</p>
+            
+                                        <p class="trainer-card__position">Тренер спортивно-оздоровительной группы (СОГ)</p>
+            
+                                        <p> Воспитанник хоккейного клуба СКА. Андрей Юрьевич имеет богатый игровой опыт в МХЛ (Молодёжной хоккейной лиге) и европейской высшей лиге. Имеет высшее тренерское образование и статус тренера второй категории, Андрей
+                                            Юрьевич успешно развивает юных спортсменов, прививая им любовь к хоккею.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timing" class="l-section">
+                <h2 class="big"><span><span>Расписание<br> тренировок</span> <img src="images/content/titles/timing@2x.png" alt=""></span></h2>
+            
+                <div class="accordion">
+                    <button class="accordion__toggler" type="button">
+                        <span>Спортивно-оздоровительная группа&nbsp;(СОГ)&nbsp;—<br> Гололед</span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+            
+                        <p><b class="accordion__subtitle">Адрес</b> Санкт-Петербург, Дальневосточный проспект, 54, стр.1</p>
+            
+                        <p><b class="accordion__subtitle">Тренер</b> Шадрин Андрей Юрьевич</p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Понедельник</b>
+                            7:45 – 8:45 | Лед<br>
+                            9:00 – 9:30 | СФП
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Среда</b>
+                            7:45 – 8:45 | Лед<br>
+                            9:00 – 9:30 | СФП
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Пятница</b>
+                            7:45 – 8:45 | Лед
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="accordion">
+                    <button class="accordion__toggler" type="button">
+                        <span>Спортивно-оздоровительная группа&nbsp;(СОГ)&nbsp;—<br> Нева Арена</span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+            
+                        <p><b class="accordion__subtitle">Адрес</b> Каток «Нева Арена», Санкт-Петербург, Дальневосточный проспект, 54, стр.1</p>
+            
+                        <p><b class="accordion__subtitle">Тренер</b> Фомич Андрей Витальевич</p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Понедельник</b>
+                            7:45 – 8:45 | Лед<br>
+                            9:00 – 9:30 | СФП
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Среда</b>
+                            7:45 – 8:45 | Лед<br>
+                            9:00 – 9:30 | СФП
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Пятница</b>
+                            7:45 – 8:45 | Лед
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="accordion">
+                    <button class="accordion__toggler" type="button">
+                        <span>Команда 2012 года рождения </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <p><b class="accordion__subtitle">Адрес</b> ФОК "Ижорец", Колпино, ул. Тверская, 25Н</p>
+            
+                        <p><b class="accordion__subtitle">Главный Тренер</b> Снетков Андрей Иванович</p>
+            
+                        <p><b class="accordion__subtitle">Тренер</b> Игнатьев Данила Сергеевич</p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Понедельник</b>
+                            Выходной
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Вторник - Пятница</b>
+                            4 тренировки на льду и 4 тренировки в зале
+                        </p>
+            
+                        <p>
+                            <b class="accordion__subtitle">Суббота - Воскресенье</b>
+                            Игровые дни
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section class="l-section l-focus">
@@ -238,13 +461,13 @@
                 </div>
             </section>
 
-            <section class="l-section l-form-section">
+            <section id="to_form" class="l-section l-form-section">
                 <h2>УТОЧНИТЬ РАСПИСАНИЕ / ЗАПИСАТЬСЯ НА ЗАНЯТИЕ<br> <span class="color-primary">Хотите посетить ознакомительную тренировку?</span></h2>
             
                 <p class="l-form-section__text">Напишите вопрос нам, и мы обязательно вам ответим!</p>
             
                 <div class="l-form">
-                    <h3>Оставьте заявку</h3>
+                    <h3 class="text-center">Оставьте заявку</h3>
             
                     <form class="js-form l-form_1" action="">
                         <label class="l-form_1__label">
@@ -256,14 +479,16 @@
                         </label>
             
                         <label class="l-form_1__label">
-                            <textarea class="l-form_1__textarea" name="QUESTION" required placeholder="Введите ваш вопрос"></textarea>
+                            <input class="l-form_1__input" name="AGE" type="text" autocomplete="off" required placeholder="Введите возраст ребенка">
                         </label>
             
                         <div class="js-form-status l-form_1__status"></div>
             
                         <div class="l-form_1__bottom">
                             <div>
-                                <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                                <span>
+                                    <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                                </span>
             
                                 <p class="l-form_1__note">Нажимая кнопку «Отправить»,<br> Вы даете согласие на обработку персональных&nbsp;данных</p>
                             </div>
@@ -292,7 +517,7 @@
                         </div>
                     </form>
             
-                    <h3>Оставьте заявку на звонок</h3>
+                    <!--<h3>Оставьте заявку на звонок</h3>
             
                     <form class="js-form l-form_2" action="">
                         <label class="l-form_2__label">
@@ -317,7 +542,7 @@
                                 </span>
                             </a>
                         </div>
-                    </form>
+                    </form>-->
                 </div>
             </section>
         </div>
@@ -350,7 +575,7 @@
                             <p>195176, г.&nbsp;Санкт‑Петербург,<br> ш.&nbsp;Революции,&nbsp;д.&nbsp;18а, пом.&nbsp;2‑Н, каб.&nbsp;11</p>
                         </div>
     
-                        <div class="footer__contacts-column">
+                        <!--<div class="footer__contacts-column">
                             <p class="footer__contacts-title">Команды</p>
     
                             <ul class="footer__contacts-list">
@@ -358,7 +583,7 @@
                                 <li><a href="#">Медведи</a></li>
                                 <li><a href="#">Крокодилы</a></li>
                             </ul>
-                        </div>
+                        </div>-->
     
                         <div class="footer__contacts-column">
                             <p class="footer__contacts-title">Мы в соц. сетях</p>
@@ -387,10 +612,95 @@
         </div>
     </footer>
 
+    <div id="callback_popup" class="l-form popup-form">
+        <h3>Заказать обратный&nbsp;звонок</h3>
+    
+        <div class="popup-form__text">
+            <p>Оставьте свои контактные данные и наш менеджер свяжется с Вами в ближайшее время</p>
+        </div>
+    
+        <form class="js-form l-form_1" action="">
+            <label class="l-form_1__label">
+                <input class="l-form_1__input" name="NAME" type="text" autocomplete="off" required placeholder="Введите ваше имя">
+            </label>
+    
+            <label class="l-form_1__label">
+                <input class="l-form_1__input" name="PHONE" type="text" autocomplete="off" required placeholder="Введите ваш номер телефона">
+            </label>
+    
+            <div class="js-form-status l-form_1__status"></div>
+    
+            <div class="l-form_1__bottom">
+                <div>
+                    <span>
+                        <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div id="signup_popup" class="l-form popup-form">
+        <h3>Оставьте заявку, и мы обязательно свяжемся с вами!</h3>
+    
+        <form class="js-form l-form_1" action="">
+            <label class="l-form_1__label">
+                <input class="l-form_1__input" name="NAME" type="text" autocomplete="off" required placeholder="Введите ваше имя">
+            </label>
+    
+            <label class="l-form_1__label">
+                <input class="l-form_1__input" name="PHONE" type="text" autocomplete="off" required placeholder="Введите ваш номер телефона">
+            </label>
+    
+            <label class="l-form_1__label">
+                <input class="l-form_1__input" name="AGE" type="text" autocomplete="off" required placeholder="Введите возраст ребенка">
+            </label>
+    
+            <div class="js-form-status l-form_1__status"></div>
+    
+            <div class="l-form_1__bottom">
+                <div>
+                    <span>
+                        <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                    </span>
+    
+                    <p class="l-form_1__note">Нажимая кнопку «Отправить»,<br> Вы даете согласие на обработку персональных&nbsp;данных</p>
+                </div>
+    
+                <div>
+                    <div class="l-form_1__socials">
+                        <a class="l-form_1__social button button--type_2 button--h_50" href="#" title="Наш Telegram" target="_blank">
+                            <span>
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#tg" />
+                                </svg>
+                            </span>
+                        </a>
+    
+                        <a class="l-form_1__social button button--type_2 button--h_50" href="#" title="Наш WhatsApp" target="_blank">
+                            <span>
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#wa" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+    
+                    <p class="l-form_1__note">Написать&nbsp;в&nbsp;мессенджерах</p>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <script src="js/jquery-3.7.1.min.js"></script>
     
     <script src="js/jquery.inputmask.min.js"></script>
     <script src="js/inputmask-init.js"></script>
+    
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/fancybox-defaults.js"></script>
+    
+    <script src="js/swiper-bundle.min.js"></script>
     
     <script src="js/landing/main.js"></script>
 </body>

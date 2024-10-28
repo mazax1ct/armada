@@ -1,4 +1,4 @@
-<header class="header header--stick_on_top">
+<header class="header header--fixed">
     <div class="header__inner container">
         <a class="header__logo header__logo--big" href="#">
             <img src="images/logo.png" alt="АРМАДА">
@@ -8,19 +8,19 @@
             <nav class="l-menu__nav">
                 <ul class="l-menu__list">
                     <li class="l-menu__item">
-                        <a class="l-menu__link" href="#">Абонементы</a>
+                        <a class="l-menu__link" href="#actions">Акции</a>
                     </li>
 
                     <li class="l-menu__item">
-                        <a class="l-menu__link" href="#">Тренеры</a>
+                        <a class="l-menu__link" href="#prices">Абонементы</a>
                     </li>
 
                     <li class="l-menu__item">
-                        <a class="l-menu__link" href="#">Акции</a>
+                        <a class="l-menu__link" href="#trainers">Тренеры</a>
                     </li>
 
                     <li class="l-menu__item">
-                        <a class="l-menu__link" href="#">Расписание</a>
+                        <a class="l-menu__link" href="#timing">Расписание</a>
                     </li>
                 </ul>
             </nav>
@@ -32,6 +32,18 @@
             </button>
         </div>
 
-        <button class="header__button button button--type_1 button--h_32_50" type="button" data-fancybox="form_popup" data-src="#form_popup"><span>Вступить в&nbsp;АРМАДУ</span></button>
+        <div class="call-back" data-fancybox="callback" data-src="#callback_popup">
+            <div class="call-back__phone">
+                <span>
+                    <svg aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#phone" />
+                    </svg>
+                    +7 929 117 1771
+                </span>
+            </div>
+            <button class="call-back__button" type="button">
+                <span><small>Заказать</small> <b>обратный звонок</b></span>
+            </button>
+        </div>
     </div>
 </header>

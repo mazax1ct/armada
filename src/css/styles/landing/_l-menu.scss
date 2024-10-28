@@ -10,12 +10,16 @@
     text-transform: uppercase;
     z-index: 1;
     @media(min-width: $sm) {
+        align-self: flex-end;
+        margin-bottom: 7px;
         min-height: 50px;
     }
     @media(min-width: $md) {
+        align-self: center;
         font-size: 14px;
         margin-right: auto;
         margin-left: 0;
+        margin-bottom: 0;
     }
     @media(min-width: $lg) {
         font-size: 20px;
@@ -35,7 +39,7 @@
             left: 0;
             overflow-y: auto;
             position: fixed;
-            padding: 110px var(--container_padding) var(--container_padding);
+            padding: 140px var(--container_padding) var(--container_padding);
             text-align: right;
             top: 0;
             width: 100%;

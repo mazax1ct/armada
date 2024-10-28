@@ -1,10 +1,10 @@
-<section class="l-section l-form-section">
+<section id="to_form" class="l-section l-form-section">
     <h2>УТОЧНИТЬ РАСПИСАНИЕ / ЗАПИСАТЬСЯ НА ЗАНЯТИЕ<br> <span class="color-primary">Хотите посетить ознакомительную тренировку?</span></h2>
 
     <p class="l-form-section__text">Напишите вопрос нам, и мы обязательно вам ответим!</p>
 
     <div class="l-form">
-        <h3>Оставьте заявку</h3>
+        <h3 class="text-center">Оставьте заявку</h3>
 
         <form class="js-form l-form_1" action="">
             <label class="l-form_1__label">
@@ -16,14 +16,16 @@
             </label>
 
             <label class="l-form_1__label">
-                <textarea class="l-form_1__textarea" name="QUESTION" required placeholder="Введите ваш вопрос"></textarea>
+                <input class="l-form_1__input" name="AGE" type="text" autocomplete="off" required placeholder="Введите возраст ребенка">
             </label>
 
             <div class="js-form-status l-form_1__status"></div>
 
             <div class="l-form_1__bottom">
                 <div>
-                    <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                    <span>
+                        <button class="l-form_1__submit button button--type_2 button--h_50" type="submit"><span>Отправить</span></button>
+                    </span>
 
                     <p class="l-form_1__note">Нажимая кнопку «Отправить»,<br> Вы даете согласие на обработку персональных&nbsp;данных</p>
                 </div>
@@ -52,7 +54,7 @@
             </div>
         </form>
 
-        <h3>Оставьте заявку на звонок</h3>
+        <!--<h3>Оставьте заявку на звонок</h3>
 
         <form class="js-form l-form_2" action="">
             <label class="l-form_2__label">
@@ -77,6 +79,6 @@
                     </span>
                 </a>
             </div>
-        </form>
+        </form>-->
     </div>
 </section>

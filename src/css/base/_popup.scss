@@ -128,6 +128,47 @@
     }
 }
 
+.popup-form {
+    border-radius: 0;
+    background-color: #343434;
+    color: #fff;
+    display: none;
+    position: relative;
+    width: 100%;
+
+    &.fancybox-content {
+        background-color: #343434;
+        border-radius: 0;
+        max-width: 600px;
+        overflow: visible;
+        padding: 60px 20px;
+        @media(max-width: $sm - 0.02px) {
+            min-height: 100%;
+        }
+        @media(min-width: $sm) {
+            border-radius: 50px;
+            padding: 75px;
+        }
+        @media(min-width: $lg) {
+            max-width: 940px;
+        }
+    }
+
+    &__text {
+        color: #A0A0A2;
+        font-size: 12px;
+        margin-bottom: 25px;
+        @media(min-width: $lg) {
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .l-form_1 {
+        margin-bottom: 0;
+    }
+}
+
 .fancybox-slide--html {
     @media(max-width: $sm - 0.02px) {
         padding: 0;
@@ -147,7 +188,7 @@
             opacity: 1;
             position: absolute;
             right: 20px;
-            top: 62px;
+            top: 24px;
             transition: color 0.3s;
             width: 24px;
             z-index: 1;
@@ -164,6 +205,31 @@
                 height: 24px;
                 width: 24px;
             }
+        }
+    }
+}
+
+.fancybox-slide--html .popup-form .fancybox-close-small.popup__close {
+    @media(min-width: $sm) {
+        background-color: var(--primary_color);
+        border-radius: 50%;
+        height: 48px;
+        left: calc(100% + 8px);
+        top: 0;
+        width: 48px;
+    }
+    @media(min-width: $lg) {
+        height: 80px;
+        width: 80px;
+    }
+
+    svg {
+        @media(min-width: $sm) {
+            fill: #fff;
+        }
+        @media(min-width: $lg) {
+            height: 30px;
+            width: 30px;
         }
     }
 }

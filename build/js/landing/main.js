@@ -12,6 +12,12 @@ $(document).on('click', '.js-menu-toggler', function() {
   return false;
 });
 
+$(document).on('click', '.accordion__toggler', function () {
+    $(this).toggleClass('is-active');
+    $(this).closest('.accordion').find('.accordion__body').slideToggle();
+    return false;
+});
+
 $(document).ready(function() {
   $('.js-form').each(function() {
       var form = $(this),
@@ -44,7 +50,7 @@ $(document).ready(function() {
 
           let result = {
               STATUS: 'ERROR',
-              ERROR: 'Произошла ошибка. Попробуйте позже или напишите нам на почту armada-hockey@mail.ru',
+              ERROR: 'Произошла ошибка. Попробуйте позже или напишите нам на почту armada‑hockey@mail.ru',
           }
 
           if (result.STATUS == 'ERROR') {
@@ -63,4 +69,28 @@ $(document).ready(function() {
          $(this).removeClass('error');
      }
   });
+
+  if($('.js-trainers-slider').length) {
+    $('.js-trainers-slider').each(function(index) {
+      let slider = new Swiper($(this)[0], {
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.js-slider-next[data-slider="'+$(this).attr('data-slider')+'"]',
+          prevEl: '.js-slider-prev[data-slider="'+$(this).attr('data-slider')+'"]',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1200: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          }
+        }
+      });
+    });
+  }
 });
