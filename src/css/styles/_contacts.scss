@@ -4,6 +4,22 @@
         padding-top: 60px;
     }
 
+    &--type_1 {
+        @media(min-width: $md) {
+            padding-top: 0;
+        }
+
+        .contacts__text-inner {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            @media(min-width: $md) {
+                min-height: 530px;
+            }
+        }
+    }
+
     &__contacts {
         margin-left: auto;
         margin-right: auto;
