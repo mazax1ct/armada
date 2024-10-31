@@ -1,0 +1,139 @@
+<div class="quiz">
+    <button class="js-quiz-closer quiz__closer" type="button" title="Закрыть">
+        <svg aria-hidden="true">
+            <use xlink:href="images/sprite.svg#close" />
+        </svg>
+    </button>
+
+    <div class="container">
+        <p class="quiz__title">Пройдите открытый квиз-тест</p>
+
+        <div class="quiz__text">
+            <p>Описание цели проведения</p>
+        </div>
+
+        <form class="quiz__form">
+            <div class="quiz__steps">
+                <div class="quiz__step is-active">
+                    <div class="quiz__step-num"><span class="color-primary">1</span>/5</div>
+
+                    <p class="quiz__step-title">Укажите возраст вашего ребенка</p>
+
+                    <label class="l-form_1__label">
+                        <input class="l-form_1__input" name="AGE" type="text" autocomplete="off" required placeholder="Введите значение">
+                    </label>
+                </div>
+
+                <div class="quiz__step">
+                    <div class="quiz__step-num"><span class="color-primary">2</span>/5</div>
+
+                    <p class="quiz__step-title">Есть ли у вашего ребенка опыт игры в хоккей?</p>
+
+                    <label class="radio">
+                        <input name="EXP" type="radio" required value="Нет опыта">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">Нет опыта</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="EXP" type="radio" required value="Учился играть самостоятельно">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">Учился играть самостоятельно</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="EXP" type="radio" required value="Занимался в хоккейной школе">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">Занимался в хоккейной школе</span>
+                    </label>
+                </div>
+
+                <div class="quiz__step">
+                    <div class="quiz__step-num"><span class="color-primary">3</span>/5</div>
+
+                    <p class="quiz__step-title">Какой уровень физ. подготовки Вашего ребенка?</p>
+
+                    <label class="radio">
+                        <input name="PHIS" type="radio" required value="Нет опыта">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">низкий уровень подготовки (быстро устает, занятия даются тяжело)</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="PHIS" type="radio" required value="низкий уровень подготовки (быстро устает, занятия даются тяжело)">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">средний</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="PHIS" type="radio" required value="высокий">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">высокий</span>
+                    </label>
+                </div>
+
+                <div class="quiz__step">
+                    <div class="quiz__step-num"><span class="color-primary">4</span>/5</div>
+
+                    <p class="quiz__step-title">Выберите наиболее удобный способ связи</p>
+
+                    <label class="radio">
+                        <input name="CHANNEL" type="radio" required value="WhatsApp">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">WhatsApp</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="CHANNEL" type="radio" required value="Telegram">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">Telegram</span>
+                    </label>
+
+                    <label class="radio">
+                        <input name="CHANNEL" type="radio" required value="Живое общение по телефону, хочу узнать об акциях и скидках, которые сейчас действуют">
+                        <span class="radio__icon"></span>
+                        <span class="radio__text">Живое общение по телефону, хочу узнать об акциях и скидках, которые сейчас действуют</span>
+                    </label>
+                </div>
+
+                <div class="quiz__step quiz__finish">
+                    <div class="quiz__step-num"><span class="color-primary">5</span>/5</div>
+
+                    <p class="quiz__step-title">Ваше имя (обязательно)</p>
+
+                    <label class="l-form_1__label">
+                        <input class="l-form_1__input" name="NAME" type="text" autocomplete="off" required placeholder="Введите значение">
+                    </label>
+
+                    <p class="quiz__step-title">Телефон (обязательно)</p>
+
+                    <label class="l-form_1__label">
+                        <input class="js-phone-mask l-form_1__input" name="PHONE" type="text" autocomplete="off" required placeholder="Введите значение">
+                    </label>
+                </div>
+
+                <div class="quiz__error">
+                    <div class="quiz__step-num"><span class="color-primary">Ошибка</span></div>
+
+                    <p class="quiz__step-text">Произошла ошибка.<br> Попробуйте позже или напишите нам на почту armada‑hockey@mail.ru</p>
+                </div>
+
+                <div class="quiz__success">
+                    <div class="quiz__step-num">Завершено!</div>
+
+                    <p class="quiz__step-title color-primary">Большое спасибо за&nbsp;то, что&nbsp;уделили нам время!</p>
+
+                    <p class="quiz__step-text">Мы свяжемся с Вами по выбранному Вами каналу связи</p>
+                </div>
+            </div>
+
+            <div class="quiz__form-buttons">
+                <button class="js-quiz-prev button button--type_2 button--h_32_50_80" type="button" disabled><span>Назад</span></button>
+
+                <button class="js-quiz-next button button--type_1 button--h_32_50_80" type="button" disabled><span>Далее</span></button>
+
+                <button class="js-quiz-submit button button--type_1 button--h_32_50_80" type="submit" disabled style="display: none"><span>Завершить</span></button>
+            </div>
+        </form>
+    </div>
+</div>

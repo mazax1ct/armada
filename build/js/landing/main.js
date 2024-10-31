@@ -1,3 +1,19 @@
+//отслеживание скролла для шапки
+var header = $('.header'),
+    scrollPrev = 0;
+
+var resize_scroll = function(e) {
+  var scrolled = $(window).scrollTop();
+
+  if (scrolled > 0) {
+		header.addClass('is-scrolled');
+	} else {
+		header.removeClass('is-scrolled');
+	}
+
+	scrollPrev = scrolled;
+};
+
 $(document).on('click', '.js-menu-toggler', function() {
   var _this = $(this);
   if(!_this.hasClass('is-active')) {
@@ -12,6 +28,14 @@ $(document).on('click', '.js-menu-toggler', function() {
   return false;
 });
 
+$(document).on('click', '.l-menu__link', function () {
+  $('.l-menu__link').removeClass('is-active');
+  $(this).addClass('is-active');
+  $('body').removeClass('is-overflow');
+  $('.header').removeClass('menu-is-open');
+  $('.js-menu-toggler').removeClass('is-active');
+});
+
 $(document).on('click', '.accordion__toggler', function () {
     $(this).toggleClass('is-active');
     $(this).closest('.accordion').find('.accordion__body').slideToggle();
@@ -19,6 +43,9 @@ $(document).on('click', '.accordion__toggler', function () {
 });
 
 $(document).ready(function() {
+  //запуск функции навешивания класса на шапку
+  resize_scroll();
+
   $('.js-form').each(function() {
       var form = $(this),
           btn = form.find('button[type="submit"]'),
@@ -94,3 +121,6 @@ $(document).ready(function() {
     });
   }
 });
+
+//перезапуск функции навешивания класса на шапку при скролле и ресайзе
+$(window).on("scroll", resize_scroll).on("resize", resize_scroll);

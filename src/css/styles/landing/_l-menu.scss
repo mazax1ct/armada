@@ -56,20 +56,9 @@
         }
     }
 
-    &__item {
-        position: relative;
-        z-index: 1;
-        @include hover {
-            @media(min-width: $md) {
-                .submenu {
-                    display: block;
-                }
-            }
-        }
-    }
+    &__item {}
 
     &__link {
-        @include active-area;
         align-items: center;
         color: #fff;
         display: inline-flex;
@@ -86,16 +75,28 @@
             color: var(--primary_color);
         }
 
-        &--root {
-            svg {
-                fill: currentColor;
-                height: 12px;
-                width: 12px;
-            }
+        & > span {
+            position: relative;
+            z-index: 1;
+        }
 
-            &.is-active {
-                svg {
-                    transform: rotate(-180deg);
+        &.is-active {
+            color: var(--primary_color);
+            position: relative;
+
+            &::after {
+                @media(min-width: $md) {
+                    border-radius: 6px 12px;
+                    background-color: #242C30;
+                    content: '';
+                    height: 100%;
+                    left: -10px;
+                    position: absolute;
+                    top: 0;
+                    transform: skewX(-26deg);
+                    transition: background-color 0.3s, opacity 0.3s;
+                    width: calc(100% + 20px);
+                    z-index: 0;
                 }
             }
         }
